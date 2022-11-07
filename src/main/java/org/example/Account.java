@@ -20,5 +20,35 @@ public class Account {
         this.balance = balance;
     }
 
+    public String getLogin() {
+        return login;
+    }
 
+    public int getPin() {
+        return pin;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPesel() {
+        return pesel;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double amount) {
+        this.balance = balance + amount;
+    }
 }
