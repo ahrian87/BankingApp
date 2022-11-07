@@ -34,7 +34,8 @@ public class Main {
                 // login ponownie
                 System.out.println("Niepoprawny login");
             }
-
+        // petla bedzie KONTYNUOWANA, czyli wroci do poczatku, jesli login bedzie nieprawidlowy - czyli false,
+            // zapis na dole jest tożsamy
         } while (!isLoginValid);
 
         // robimy zmienna do sprawdzenia poprawnosci pinu
@@ -49,7 +50,8 @@ public class Main {
             int pin = sc.nextInt();
             // sprawdzamy czy pin jest poprawny
             if (pin == account1.getPin()) {
-                // jesli pin poprawny, wyswietlamy komunikat i zmieniamy zmienna walidacji pinu na TRUE
+                // jesli pin poprawny, wyswietlamy komunikat i zmieniamy zmienna walidacji pinu na TRUE,
+                // wiec petla sie konczy - warunek po while na dole petli jest nieprawdziwy
                 System.out.println("Poprawny pin\n");
                 isPinValid = true;
             }
@@ -68,7 +70,8 @@ public class Main {
                     System.exit(0);
                 }
             }
-
+        // warunkiem KONTYNUACJI petli jest isPinValid = false, zapis ponizej jest tożsamy,
+            // czyli jesli pin jest poprawny (true), petla sie zakonczy
         } while (!isPinValid);
 
         // definiujemy zmienna do wyboru w menu
