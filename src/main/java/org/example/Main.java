@@ -30,7 +30,7 @@ public class Main {
                 isLoginValid = true;
             }
             else {
-                // jesli login sie nie zgadza wyswietla sie komunikat i petla wracal na poczatek - mozemy wpisac
+                // jesli login sie nie zgadza wyswietla sie komunikat i petla wraca na poczatek - mozemy wpisac
                 // login ponownie
                 System.out.println("Niepoprawny login");
             }
