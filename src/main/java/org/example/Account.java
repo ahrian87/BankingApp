@@ -48,7 +48,12 @@ public class Account {
         return balance;
     }
 
-    public void setBalance(double amount) {
+    public void addBalance(double amount) {
         this.balance = balance + amount;
     }
+
+    public void subtractBalance(double amount) {
+        this.balance = balance - amount;
+    }
+
 }
