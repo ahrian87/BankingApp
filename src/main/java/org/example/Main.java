@@ -74,7 +74,7 @@ public class Main {
             // czyli jesli pin jest poprawny (true), petla sie zakonczy
         } while (!isPinValid);
 
-        // definiujemy zmienna do wyboru w menu
+        // definiujemy zmienna do wyboru w menu, na razie bez przypisanej wartosci
         int choice;
         do {
             // wyswietla sie menu
@@ -84,7 +84,7 @@ public class Main {
             // dokonujemy wyboru, przypisujemy jakas wartosc do wczesniej zdefiniowanej zmiennej 'choice'
             choice = sc.nextInt();
 
-            // switch sprawdza nasz wybor i w zaleznosci od tego co wybierzemy odpala inna linie kodu
+            // switch sprawdza nasz wybor i w zaleznosci od tego co wybierzemy odpala inne linie kodu
             switch (choice) {
                 case 1:
                     System.out.println("Stan Twojego konta wynosi " + account1.getBalance() + " zł");
@@ -112,7 +112,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Podaj kwotę kredytu, o którą chciałbyś się ubiegać: ");
-                    // defniujemy ile chemy kredytu
+                    // defniujemy ile chcemy kredytu
                     double creditAmount = sc.nextDouble();
                     // jesli kwota o ktora sie ubiegamy jest wyzsza od 1/10 stanu konta to aplikacja nie udziela kredytu
                     if (creditAmount > (account1.getBalance() / 10)) {
