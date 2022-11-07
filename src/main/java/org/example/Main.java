@@ -52,49 +52,49 @@ public class Main {
 
         } while (!isPinValid);
 
+        int choice;
+        do {
+            System.out.println("MENU");
+            System.out.println("1. Wpłata środków \n2. Wypłata środków \n3. Sprawdź saldo \n4. Weź kredyt \n5. Wyjdź");
+            System.out.println("Twój wybór: ");
+            choice = sc.nextInt();
 
-        System.out.println("MENU");
-        System.out.println("1. Wpłata środków \n2. Wypłata środków \n3. Sprawdź saldo \n4. Weź kredyt \n5. Wyjdź");
-        System.out.println("Twój wybór: ");
-        int choice = sc.nextInt();
-
-        switch (choice) {
-            case 1:
-                System.out.println("Stan Twojego konta wynosi " + account1.getBalance() + " zł");
-                System.out.println("Podaj kwotę, którą chcesz wpłacić: ");
-                double depoAmount = sc.nextDouble();
-                account1.addBalance(depoAmount);
-                System.out.println("Operacja wykonana poprawnie");
-                System.out.println("Twój stan konta wynosi " + account1.getBalance() + " zł");
-                break;
-            case 2:
-                System.out.println("Stan Twojego konta wynosi " + account1.getBalance() + " zł");
-                System.out.println("Podaj kwotę do wypłaty: ");
-                double withdrawAmount = sc.nextDouble();
-                account1.subtractBalance(withdrawAmount);
-                System.out.println("Operacja wykonana poprawnie");
-                System.out.println("Twój stan konta wynosi " + account1.getBalance() + " zł");
-                break;
-            case 3:
-                System.out.println("Stan Twojego konta wynosi " + account1.getBalance() + " zł");
-                break;
-            case 4:
-                System.out.println("Podaj kwotę kredytu, o którą chciałbyś się ubiegać: ");
-                double creditAmount = sc.nextDouble();
-                if (creditAmount > (account1.getBalance() / 10)) {
-                    System.out.println("Nie stać Cię na tak wysoki kredyt. Maksymalna kwota jaką możemy Ci zaproponować" +
-                            " to " + (account1.getBalance() / 10) + " zł, biedaku");
+            switch (choice) {
+                case 1:
+                    System.out.println("Stan Twojego konta wynosi " + account1.getBalance() + " zł");
+                    System.out.println("Podaj kwotę, którą chcesz wpłacić: ");
+                    double depoAmount = sc.nextDouble();
+                    account1.addBalance(depoAmount);
+                    System.out.println("Operacja wykonana poprawnie");
+                    System.out.println("Twój stan konta wynosi " + account1.getBalance() + " zł\n");
+                    break;
+                case 2:
+                    System.out.println("Stan Twojego konta wynosi " + account1.getBalance() + " zł");
+                    System.out.println("Podaj kwotę do wypłaty: ");
+                    double withdrawAmount = sc.nextDouble();
+                    account1.subtractBalance(withdrawAmount);
+                    System.out.println("Operacja wykonana poprawnie");
+                    System.out.println("Twój stan konta wynosi " + account1.getBalance() + " zł\n");
+                    break;
+                case 3:
+                    System.out.println("Stan Twojego konta wynosi " + account1.getBalance() + " zł\n");
+                    break;
+                case 4:
+                    System.out.println("Podaj kwotę kredytu, o którą chciałbyś się ubiegać: ");
+                    double creditAmount = sc.nextDouble();
+                    if (creditAmount > (account1.getBalance() / 10)) {
+                        System.out.println("Nie stać Cię na tak wysoki kredyt. Maksymalna kwota jaką możemy Ci zaproponować" +
+                                " to " + (account1.getBalance() / 10) + " zł, biedaku\n");
+                    } else {
+                        account1.addBalance(creditAmount);
+                        System.out.println("Przyznano kredyt, aktualny stan Twojego konta wynosi " + account1.getBalance()
+                                + " zł\n");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Dziękujemy za korzystanie z usług naszego banku, zapraszamy ponownie! ");
+                    System.exit(0);
                 }
-                else {
-                    account1.addBalance(creditAmount);
-                    System.out.println("Przyznano kredyt, aktualny stan Twojego konta wynosi " + account1.getBalance()
-                    + " zł");
-                }
-                break;
-            case 5:
-                System.out.println("Dziękujemy za korzystanie z usług naszego banku, zapraszamy ponownie! ");
-                System.exit(0);
+            } while (choice != 5);
         }
-
     }
-}
